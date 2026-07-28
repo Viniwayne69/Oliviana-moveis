@@ -696,8 +696,22 @@ textarea {
 .catalog-layout {
   display: grid;
   gap: 30px;
-  grid-template-columns: 310px 1fr;
+  grid-template-columns: minmax(260px, 310px) minmax(0, 1fr);
   margin-top: 38px;
+}
+
+.catalog-layout > div {
+  min-width: 0;
+}
+
+.catalog-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 1680px) {
+  .catalog-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .filters {
@@ -728,6 +742,8 @@ textarea {
   cursor: pointer;
   font-size: 12px;
   font-weight: 900;
+  min-height: 36px;
+  padding: 0 4px;
   text-transform: uppercase;
 }
 
@@ -1032,10 +1048,32 @@ textarea {
   grid-template-columns: minmax(0, 1fr) 360px;
 }
 
+.contact-layout > * {
+  min-width: 0;
+}
+
 .contact-form,
 .admin-form {
   display: grid;
   gap: 16px;
+  min-width: 0;
+  width: 100%;
+}
+
+.form-field {
+  min-width: 0;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  min-width: 0;
+  width: 100%;
+}
+
+.contact-card p {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .field-error {
@@ -1441,7 +1479,10 @@ textarea {
   .contact-card,
   .contact-form,
   .admin-panel {
+    max-width: 100%;
+    min-width: 0;
     padding: 18px;
+    width: 100%;
   }
 
   .admin-content {

@@ -104,9 +104,9 @@ function slugify(value: string) {
 }
 
 export default function SiteClient({ page, slug }: Props) {
-  const [properties, setProperties] = useState<Property[]>([]);
-  const [leads, setLeads] = useState<Lead[]>([]);
-  const [settings, setSettings] = useState<SiteSettings>(loadSettings());
+  const [properties, setProperties] = useState<Property[]>(() => loadProperties());
+  const [leads, setLeads] = useState<Lead[]>(() => loadLeads());
+  const [settings, setSettings] = useState<SiteSettings>(() => loadSettings());
 
   useEffect(() => {
     setProperties(loadProperties());
