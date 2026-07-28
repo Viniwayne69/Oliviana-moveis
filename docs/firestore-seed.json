@@ -1,0 +1,9 @@
+{
+  "note": "Dados demonstrativos. Substitua por informações reais antes da publicação oficial.",
+  "collections": {
+    "properties": "Use os objetos de app/lib/demo-data.ts como base inicial.",
+    "leads": "Contatos enviados pelo formulário.",
+    "faq": "Perguntas e respostas editáveis pelo painel.",
+    "siteSettings": "WhatsApp, e-mail, Instagram, textos principais e informações de contato."
+  }
+}
