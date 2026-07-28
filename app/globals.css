@@ -186,15 +186,16 @@ img {
 
 .hero {
   display: grid;
-  gap: 44px;
-  grid-template-columns: minmax(0, 0.82fr) minmax(380px, 1fr);
+  align-items: center;
+  gap: clamp(44px, 5vw, 88px);
+  grid-template-columns: minmax(0, 0.94fr) minmax(420px, 1.06fr);
   min-height: calc(100vh - 78px);
   padding: 7vw 6vw 5vw;
 }
 
 .hero-copy {
   align-self: center;
-  max-width: 610px;
+  max-width: 760px;
 }
 
 .eyebrow {
@@ -222,9 +223,14 @@ h2 {
 .hero h1,
 .page-hero h1 {
   color: var(--deep-green);
-  font-size: clamp(42px, 6vw, 76px);
+  font-size: clamp(46px, 5.2vw, 92px);
   line-height: 0.96;
   margin: 0 0 24px;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  font-size: clamp(16px, 1.05vw, 19px);
+  max-width: 680px;
 }
 
 .hero p,
@@ -253,7 +259,7 @@ h2 {
 
 .hero-image {
   border-radius: 8px;
-  min-height: 520px;
+  min-height: clamp(500px, 42vw, 680px);
   overflow: hidden;
   position: relative;
   box-shadow: var(--shadow);
@@ -630,8 +636,18 @@ textarea {
 .testimonial-card svg {
   color: var(--gold);
   fill: var(--gold);
+  flex: 0 0 auto;
   height: 15px;
   width: 15px;
+}
+
+.testimonial-stars {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 2px;
+  line-height: 0;
+  margin-bottom: 10px;
 }
 
 .testimonial-card p {

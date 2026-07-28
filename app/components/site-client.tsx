@@ -1126,7 +1126,13 @@ function Testimonials() {
           ["Perfil provisório", "Vila Mariana", "A experiência passa cuidado e clareza, sem parecer fria ou complicada."],
         ].map(([name, neighborhood, content]) => (
           <article className="testimonial-card" key={name}>
-            <div><Star /><Star /><Star /><Star /><Star /></div>
+            <div className="testimonial-stars" aria-label="Avaliação com 5 estrelas">
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+              <Star />
+            </div>
             <p>{content}</p>
             <strong>{name}</strong>
             <span>{neighborhood}</span>
